@@ -1,15 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reverse-words
-  labels:
-    app: reverse-words
+name: reverse-words
+labels:
+   app: reverse-words
 spec:
-  template:
-    spec:
-      containers:
-      - name: reverse-words
-        env:
-        - name: RELEASE
-          value: "Preproduction release"
-        - $patch: replace
+template:
+   spec:
+   containers:
+   - name: reverse-words
+     image: quay.io/mavazque/reversewords:v0.0.3
+     env:
+     - name: RELEASE
+       value: "Preproduction release"
+     - $patch: replace
