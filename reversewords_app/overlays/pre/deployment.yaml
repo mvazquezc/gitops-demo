@@ -14,3 +14,12 @@ template:
      - name: RELEASE
        value: "Preproduction release"
      - $patch: replace
+  triggers:
+  - type: ConfigChange
+  - imageChangeParams:
+      containerNames:
+      - reverse-words
+      from:
+        kind: ImageStreamTag
+        name: reversewords:v0.0.3
+        namespace: openshift
