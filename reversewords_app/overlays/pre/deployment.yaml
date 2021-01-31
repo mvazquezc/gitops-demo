@@ -13,7 +13,6 @@ template:
      env:
      - name: RELEASE
        value: "Preproduction release"
-     - $patch: replace
   triggers:
   - type: ConfigChange
   - imageChangeParams:
