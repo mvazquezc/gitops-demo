@@ -10,9 +10,6 @@ template:
    containers:
    - name: reverse-words
      image: quay.io/mavazque/reversewords:v0.0.3
-     env:
-     - name: RELEASE
-       value: "Preproduction release"
   triggers:
   - type: ConfigChange
   - imageChangeParams:
